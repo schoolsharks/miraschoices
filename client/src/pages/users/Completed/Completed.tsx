@@ -13,6 +13,9 @@ import { RootState } from "../../../store/store";
 import useCompleted from "../../../hooks/useCompleted";
 import { useEffect } from "react";
 import { Equalizer } from "@mui/icons-material";
+import riskTaker from "../../../assets/badges/risk-taker.webp";
+import securitySeeker from "../../../assets/badges/security-seeker.webp";
+import balancedThinker from "../../../assets/badges/balanced-thinker.webp";
 
 const Completed = () => {
   const theme = useTheme();
@@ -39,12 +42,15 @@ const Completed = () => {
     let icon="";
     let desc=""
     if(archeType==="Risk Taker"){
+      icon=riskTaker
       desc="<p>Risk-Taker wo hota hai jo bold decisions lene se nahi ghabrata. High returns ke liye high risks lena inka approach hota hai. Ye log bade loans lete hain, aggressive investments karte hain, aur uncertain market opportunities ka faayda uthate hain. Inka main focus fast growth aur profit maximize karna hota hai, even if there’s a chance of loss.</p></br></br><b>Key Traits: Ambitious, bold, profit-driven.<b>"
     }
     else if(archeType==="Security Seeker"){
+      icon=securitySeeker
       desc="<p>Security Seeker hamesha safe aur stable options choose karta hai. Risk minimize karna aur long-term security maintain karna inka priority hota hai. Ye log controlled spending karte hain, debt avoid karte hain aur safe investments ko prefer karte hain. Slow but steady growth inka main goal hota hai.</p></br></br><b>Key Traits: Cautious, stability-focused, risk-averse.<b>"
     }
     else{
+      icon=balancedThinker
       desc="<p>Balanced Thinker risk aur security ke beech ek balance banakar chalta hai. Ye log calculated risks lete hain jab reward worth it ho, but at the same time, stability ko bhi ignore nahi karte. Situation analyze karke flexible decisions lete hain jo growth aur safety dono ko balance karte hain.</p></br></br><b>Key Traits: Strategic, adaptable, balanced approach.<b>"
     }
     return {icon,desc}
@@ -100,8 +106,8 @@ const Completed = () => {
         gap="8px"
         marginBottom={"56px"}
       >
-        <Stack direction={"row"}>
-          <Box src={fetchArcheTypeDetails(analytics.archeType).icon} alt="" component={"img"} />
+        <Stack direction={"row"} gap={"12px"}>
+          <Box src={fetchArcheTypeDetails(analytics.archeType).icon} height={"66px"} alt="" component={"img"} />
           <Box color={theme.palette.primary.main}>
             <Typography fontSize={"20px"} fontWeight={"400"}>Your Personality</Typography>
             <Typography fontSize={"25px"} fontWeight={"600"}>{analytics.archeType}</Typography>

@@ -108,19 +108,7 @@ export const resetSession = async (
   if (!activeSession) {
     return next(new AppError("Active Session module not found", 404));
   }
-  const newSession = await SessionModel.create({
-    players: 0,
-    overallStats: {
-      trustScore: 0,
-      timeInHand: 0,
-      colleaguesTime: 0,
-    },
-    choicesDistribution: {
-      optimal: 0,
-      subOptimal: 0,
-      acceptable: 0,
-    },
-  });
+  const newSession = await SessionModel.create({});
 
   activeSession.isActive = true;
   activeSession.activeSession=newSession._id
