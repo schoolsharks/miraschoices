@@ -41,7 +41,7 @@ const Completed = () => {
   const fetchArcheTypeDetails=(archeType:string)=>{
     let icon="";
     let desc=""
-    if(archeType==="Risk Taker"){
+    if(archeType==="Risk-Taker"){
       icon=riskTaker
       desc="<p>Risk-Taker wo hota hai jo bold decisions lene se nahi ghabrata. High returns ke liye high risks lena inka approach hota hai. Ye log bade loans lete hain, aggressive investments karte hain, aur uncertain market opportunities ka faayda uthate hain. Inka main focus fast growth aur profit maximize karna hota hai, even if there’s a chance of loss.</p></br></br><b>Key Traits: Ambitious, bold, profit-driven.<b>"
     }
