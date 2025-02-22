@@ -1,5 +1,6 @@
 import { NextFunction, Request, response, Response } from "express";
 import {
+  Impacts,
   questions,
   standardLoanInterest,
 } from "../data/questions";
@@ -88,12 +89,26 @@ export const handleFetchNextQuestion = async (
         }
       } else {
         // If not responded earlier
+
         const newOption = questions
           .find((q) => q.id === quesId)
           ?.options.find((o) => o.option === option);
 
         if(user.loan<0){
           user.loan *= (1 + standardLoanInterest);
+        }
+
+        if(newOption?.impact){
+          if(newOption.impact===Impacts.Investment_down_20){
+            user.investments = user.investments.map((investment) => ({
+              amount: investment.amount * (1 - 0.2),
+              returns: investment.returns,
+            }));
+          }
+          else if(newOption.impact===Impacts.Withdraw_All_Investments){
+            user.cash += user.investments.reduce((a, b) => a + b.amount, 0);
+            user.investments = [];
+          }
         }
         
         user.investments = user.investments.map((investment) => ({
@@ -215,9 +230,8 @@ export const handleGameCompleted = async (
     investments: user.investments.reduce((a, b) => a + b.amount, 0),
     netWorth: user.cash + user.loan + user.investments.reduce((a, b) => a + b.returns, 0),
     archeType,
-    userRank,
   };
-  res.status(200).json({ success: true, data: { analytics } });
+  res.status(200).json({ success: true, data: { analytics,userRank } });
 };
 
 

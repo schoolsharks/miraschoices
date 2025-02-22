@@ -4,7 +4,6 @@ import {
   // CircularProgress,
   Stack,
   Typography,
-  useMediaQuery,
   useTheme,
 } from "@mui/material";
 import { useEffect } from "react";
@@ -24,7 +23,7 @@ const Questions = () => {
   const { cash, loan, investments,answered,totalQuestions } = useSelector(
     (state: RootState) => state.user
   );
-  const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
+  // const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
 
   const {
     loading,
@@ -49,10 +48,10 @@ const Questions = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
           style={{
-            position: "absolute",
+            position: "fixed",
             top: 0,
-            left: isLargeScreen ? "-100%" : "0",
-            width: isLargeScreen ? "175vw" : "100vw",
+            left:0,
+            width:"100vw",
             height: `${window.innerHeight < 616 ? 616 : window.innerHeight}px`,
             minHeight: "100vh",
             display: "flex",

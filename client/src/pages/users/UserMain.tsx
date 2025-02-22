@@ -29,7 +29,7 @@ const UserMain = () => {
 
 
   if(loading){
-    return <CircularProgress/>
+    return <Stack height="100vh" alignItems={"center"} justifyContent={"center"}><CircularProgress/></Stack>
   }
 
   return (

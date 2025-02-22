@@ -32,7 +32,7 @@ const Completed = () => {
   // };
 
   if (!analytics) {
-    return <CircularProgress />;
+    return <Stack height={"100vh"} alignItems={"center"} justifyContent={"center"}><CircularProgress /></Stack>;
   }
 
   const fetchArcheTypeDetails=(archeType:string)=>{

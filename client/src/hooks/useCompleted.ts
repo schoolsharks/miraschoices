@@ -26,7 +26,7 @@ const useCompleted = () => {
       if (response.data.success) {
         const { analytics: gameAnalytics,userRank } = response.data.data;
         if(gameAnalytics.totalPlayers){
-          dispatch(setUser({totalPlayers:gameAnalytics.totalPlayers,userRank}))
+          dispatch(setUser({totalPlayers:gameAnalytics.totalPlayers,rank:userRank}))
         }
         setAnalytics(gameAnalytics);
       } else {

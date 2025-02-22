@@ -1,9 +1,16 @@
 export const initialCashInHand = 5000
 export const standardLoanInterest=0.1
+
+export enum Impacts{
+  Investment_down_20="Investment down 20%",
+  Withdraw_All_Investments="Withdraw all investments",
+}
+
 interface Option {
   option: string,
   optionText: string,
   cash: number,
+  impact?:Impacts,
   loan: {
     amount: number,
     interest: number
@@ -499,6 +506,7 @@ export const questions: Question[] = [
         option: "A",
         optionText: "20% investments down",
         cash: 0,
+        impact:Impacts.Investment_down_20,
         loan: {
           amount: 0,
           interest: 0.0
@@ -514,6 +522,7 @@ export const questions: Question[] = [
         option: "B",
         optionText: "Withdraw all investments",
         cash: 0,
+        impact:Impacts.Withdraw_All_Investments,
         loan: {
           amount: 0,
           interest: 0.0

@@ -192,7 +192,7 @@ const Leaderboard = () => {
                         player.netWorth < 0 ? "translateX(-10px)" : "none",
                     }}
                   >
-                    {player.netWorth}
+                    {Math.round(player.netWorth)}
                   </Typography>
                 </Grid2>
               </Grid2>
@@ -272,7 +272,7 @@ const Leaderboard = () => {
                   transform: netWorth < 0 ? "translateX(-10px)" : "none",
                 }}
               >
-                {netWorth}
+                {Math.round(netWorth)}
               </Typography>
             </Grid2>
           </Grid2>}
