@@ -88,13 +88,14 @@ const Leaderboard = () => {
           marginTop="50px"
           minHeight={"20vh"}
         >
-          <Grid2 container sx={{ width: "100%" }}>
-            <Grid2 size={{ xs: 5 }}>
+          <Grid2 container sx={{ width: "100%",padding:"0 5px" }}>
+            <Grid2 size={{ xs: 0.7 }}></Grid2>
+            <Grid2 size={{ xs: 4 }} sx={{paddingLeft:"4px"}}>
               <Typography fontWeight="700" fontSize="1rem" textAlign="left">
                 Name
               </Typography>
             </Grid2>
-            <Grid2 size={{ xs: 3 }}>
+            <Grid2 size={{ xs: 3.5 }}>
               <Typography fontWeight="700" fontSize="1rem" textAlign="center">
                 Seconds
               </Typography>
@@ -117,34 +118,37 @@ const Leaderboard = () => {
                 key={player.name}
                 sx={{
                   width: "100%",
-                  border: rank === index+1 ? `1px solid #00416A` : index < 3 ? "1px solid #fff" : "none",
+                  border:
+                    rank === index + 1
+                      ? `1px solid #00416A`
+                      : index < 3
+                      ? "1px solid #fff"
+                      : "none",
                   borderRadius: "12px",
                   padding: "2px 5px",
                   marginTop: "10px",
                   position: "relative",
                 }}
               >
-                {index < 3 && (
+                <Grid2 size={{ xs: 0.7 }} sx={{placeContent:"center"}}>
                   <Stack
                     alignItems="center"
                     justifyContent="center"
                     sx={{
-                      position: "absolute",
-                      top: "-2px",
-                      left: "-6px",
                       bgcolor: "#FFEFDA",
                       borderRadius: "50%",
-                      width: "13px",
-                      height: "13px",
+                      width: "15px",
+                      height: "15px",
                     }}
                   >
                     <Typography sx={{ color: "#FFC328", fontSize: "12px" }}>
                       {index + 1}
                     </Typography>
                   </Stack>
-                )}
+                </Grid2>
+
                 <Grid2
-                  size={{ xs: 5 }}
+                  size={{ xs: 4 }}
                   sx={{
                     display: "flex",
                     alignItems: "center",
@@ -160,7 +164,7 @@ const Leaderboard = () => {
                   </Typography>
                 </Grid2>
                 <Grid2
-                  size={{ xs: 3 }}
+                  size={{ xs: 3.5 }}
                   sx={{ display: "flex", alignItems: "center" }}
                 >
                   <Typography
@@ -199,83 +203,84 @@ const Leaderboard = () => {
             );
           })}
 
-          {rank >3 && <Grid2
-            container
-            key={name}
-            sx={{
-              width: "100%",
-              border: `1px solid #00416A`,
-              borderRadius: "12px",
-              padding: "2px 5px",
-              marginTop: "10px",
-              position: "relative",
-            }}
-          >
-               <Stack
+          {rank > 3 && (
+            <Grid2
+              container
+              key={name}
+              sx={{
+                width: "100%",
+                border: `1px solid #00416A`,
+                borderRadius: "12px",
+                padding: "2px 5px",
+                marginTop: "10px",
+                position: "relative",
+              }}
+            >
+              <Grid2 size={{ xs: 0.7 }} sx={{placeContent:"center"}}>
+                  <Stack
                     alignItems="center"
                     justifyContent="center"
                     sx={{
-                      position: "absolute",
-                      top: "-2px",
-                      left: "-6px",
                       bgcolor: "#FFEFDA",
                       borderRadius: "50%",
-                      width: "13px",
-                      height: "13px",
+                      width: "15px",
+                      height: "15px",
                     }}
                   >
-                    <Typography sx={{ color: "#FFC328", fontSize: "12px" }}>
+                    <Typography sx={{ color: "#FFC328", fontSize: "12px",margin:"2px" }}>
                       {rank}
                     </Typography>
                   </Stack>
-            <Grid2
-              size={{ xs: 5 }}
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                paddingLeft: "4px",
-              }}
-            >
-              <Typography fontWeight="500" fontSize="0.9rem" textAlign="left">
-                {name?.split(" ")[0]}
-              </Typography>
-            </Grid2>
-            <Grid2
-              size={{ xs: 3 }}
-              sx={{ display: "flex", alignItems: "center" }}
-            >
-              <Typography
-                fontWeight="500"
-                fontSize="0.9rem"
-                textAlign="center"
-                sx={{ width: "100%" }}
-              >
-                {avgResponseTime.toFixed(2)}
-              </Typography>
-            </Grid2>
-            <Grid2
-              size={{ xs: 3.5 }}
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Typography
-                fontWeight="500"
-                fontSize="0.9rem"
-                textAlign="left"
-                minWidth={"max-content"}
+                </Grid2>
+              <Grid2
+                size={{ xs: 4 }}
                 sx={{
-                  width: "max-content",
-                  margin: "auto",
-                  transform: netWorth < 0 ? "translateX(-10px)" : "none",
+                  display: "flex",
+                  alignItems: "center",
+                  paddingLeft: "4px",
                 }}
               >
-                {Math.round(netWorth)}
-              </Typography>
+                <Typography fontWeight="500" fontSize="0.9rem" textAlign="left">
+                  {name?.split(" ")[0]}
+                </Typography>
+              </Grid2>
+              <Grid2
+                size={{ xs: 3.5 }}
+                sx={{ display: "flex", alignItems: "center" }}
+              >
+                <Typography
+                  fontWeight="500"
+                  fontSize="0.9rem"
+                  textAlign="center"
+                  sx={{ width: "100%" }}
+                >
+                  {avgResponseTime.toFixed(2)}
+                </Typography>
+              </Grid2>
+              <Grid2
+                size={{ xs: 3.5 }}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Typography
+                  fontWeight="500"
+                  fontSize="0.9rem"
+                  textAlign="left"
+                  minWidth={"max-content"}
+                  sx={{
+                    width: "max-content",
+                    margin: "auto",
+                    transform: netWorth < 0 ? "translateX(-10px)" : "none",
+                  }}
+                >
+                  {Math.round(netWorth)}
+                </Typography>
+              </Grid2>
             </Grid2>
-          </Grid2>}
+          )}
         </Stack>
         <Stack
           sx={{
