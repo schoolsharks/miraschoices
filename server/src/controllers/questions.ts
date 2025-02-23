@@ -109,6 +109,9 @@ export const handleFetchNextQuestion = async (
             user.cash += user.investments.reduce((a, b) => a + b.amount, 0);
             user.investments = [];
           }
+          else if(newOption.impact=Impacts.Penalty_5){
+            user.loan += user.loan * 0.05;
+          }
         }
         
         user.investments = user.investments.map((investment) => ({

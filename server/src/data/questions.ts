@@ -4,6 +4,7 @@ export const standardLoanInterest=0.1
 export enum Impacts{
   Investment_down_20="Investment down 20%",
   Withdraw_All_Investments="Withdraw all investments",
+  Penalty_5="Penalty 5%",
 }
 
 interface Option {
@@ -52,7 +53,7 @@ export const questions: Question[] = [
       {
         option: "B",
         optionText: "Use ₹5,000 cash for fewer items.",
-        cash: 600,
+        cash: 0,
         loan: {
           amount: 0,
           interest: 0.0
@@ -160,10 +161,10 @@ export const questions: Question[] = [
       {
         option: "B",
         optionText: "Borrow ₹6,000 @10%.",
-        cash: 2000,
+        cash: 0,
         loan: {
           amount: -6000,
-          interest: 0.15
+          interest: 0.10
         },
         investment: {
           amount: 0,
@@ -346,8 +347,8 @@ export const questions: Question[] = [
           interest: 0.0
         },
         investment: {
-          amount: 0,
-          returns: 0.0
+          amount: 5000,
+          returns: 0.05
         },
         rp: 1,
         sp: 2
@@ -490,8 +491,8 @@ export const questions: Question[] = [
           interest: 0.0
         },
         investment: {
-          amount: 0,
-          returns: 0.0
+          amount: 5000,
+          returns: 0.14
         },
         rp: 2,
         sp: 0
@@ -561,7 +562,7 @@ export const questions: Question[] = [
         cash: 5000,
         loan: {
           amount: 5000,
-          interest: 0.0
+          interest: 0.00
         },
         investment: {
           amount: 0,
@@ -601,7 +602,7 @@ export const questions: Question[] = [
         },
         investment: {
           amount: 5000,
-          returns: 0.5
+          returns: 0.06
         },
         rp: 1,
         sp: 2
@@ -631,6 +632,7 @@ export const questions: Question[] = [
         option: "B",
         optionText: "Delay, with 5% penalty",
         cash: 0,
+        impact:Impacts.Penalty_5,
         loan: {
           amount: 0,
           interest: 0.0
