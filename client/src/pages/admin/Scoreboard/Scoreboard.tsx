@@ -3,9 +3,9 @@ import { Stack, Typography, useTheme, Box, Grid2 } from "@mui/material";
 import { useEffect } from "react";
 import FlipMove from "react-flip-move";
 import CountUp from "react-countup";
-import qrCode from "../../../assets/qr-code/qr-code.webp";
+// import qrCode from "../../../assets/qr-code/qr-code.webp";
 import { useNavigate } from "react-router-dom";
-import { HomeOutlined } from "@mui/icons-material";
+import { Cached, HomeOutlined } from "@mui/icons-material";
 import TotalPlayers from "../../../components/TotalPlayers";
 import useScoreboard, { Archetype } from "../../../hooks/useScoreboard";
 
@@ -20,6 +20,7 @@ const Scoreboard = () => {
     previousLeaderboardRef,
     totalPlayers,
     archetypePercentages,
+    gameCompletion
   } = useScoreboard();
 
   useEffect(() => {
@@ -35,6 +36,10 @@ const Scoreboard = () => {
       }
     };
   }, []);
+
+  const handleRefresh=()=>{
+    window.location.reload()
+  }
 
   const archetypeStyles: Record<
     Archetype,
@@ -64,13 +69,26 @@ const Scoreboard = () => {
         overflow: "hidden",
       }}
     >
+       <Typography
+          position={"absolute"}
+          variant="h5"
+          fontWeight="700"
+          textAlign="center"
+          marginTop={"24px"}
+          justifySelf={"center"}
+          color={theme.palette.primary.main}
+        >
+          Score Board
+        </Typography>
       <Stack
+        justifyContent={"space-between"}
         direction={"row"}
         alignItems={"center"}
         width={"98%"}
-        padding={"48px 16px 12px"}
+        padding={"12px 16px"}
         position={"relative"}
-      >
+      > 
+      <Stack direction={"row"} alignItems={"center"} gap={"8px"}>
         <Box
           onClick={() => navigate("/admin/home")}
           bgcolor={theme.palette.primary.main}
@@ -78,21 +96,33 @@ const Scoreboard = () => {
           color={"#ffffff"}
           height={"max-content"}
           borderRadius={"8px"}
-          sx={{ cursor: "pointer", position: "absolute", left: "16px" }}
+          sx={{ cursor: "pointer" }}
         >
           <HomeOutlined sx={{ fontSize: "1.7rem", color: "#ffffff" }} />
         </Box>
-        <Typography
-          variant="h5"
-          fontWeight="700"
-          textAlign="center"
-          justifySelf={"center"}
-          flex={"1"}
-          color={theme.palette.primary.main}
+        <Box
+          onClick={handleRefresh}
+          bgcolor={theme.palette.primary.main}
+          padding={"8px"}
+          color={"#ffffff"}
+          height={"max-content"}
+          borderRadius={"8px"}
+          sx={{ cursor: "pointer" }}
         >
-          Score Board
-        </Typography>
-        <img
+          <Cached sx={{ fontSize: "1.7rem", color: "#ffffff" }} />
+        </Box>
+        </Stack>
+        <Stack direction={"row"} gap={"6px"} borderRadius={"5px"} overflow={"hidden"}>
+          <Stack padding="8px 12px" bgcolor={theme.palette.primary.main} color={"#fff"}>
+            <Typography fontWeight={"400"} fontSize={"15px"}>Game Completion</Typography>
+            <Typography fontWeight={"800"} fontSize={"1.25rem"}>{gameCompletion.toFixed()}%</Typography>
+          </Stack>
+          <Stack padding="8px 12px" bgcolor={"#fff"}>
+            <Typography fontWeight={"400"} fontSize={"15px"}>Live in Session</Typography>
+            <Typography fontWeight={"800"} fontSize={"1.25rem"}>{totalPlayers}</Typography>
+          </Stack>
+        </Stack>
+        {/* <img
           src={qrCode}
           alt=""
           style={{
@@ -102,7 +132,7 @@ const Scoreboard = () => {
             position: "absolute",
             right: "16px",
           }}
-        />
+        /> */}
       </Stack>
       {/* <Typography
           variant="h5"

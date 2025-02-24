@@ -17,6 +17,7 @@ import {
   resetSession,
 } from "../../../store/admin/sessionInfoActions";
 import homeGraphic from "../../../assets/home-graphic.webp";
+import CountdownTimer from "../../../components/CountdownTimer";
 
 const Home = () => {
   const theme = useTheme();
@@ -46,9 +47,12 @@ const Home = () => {
   return (
     <>
       <Stack padding={"40px 120px"} color={theme.palette.primary.main}>
-        <Typography fontSize={"60px"} fontWeight={"700"}>
-          Mira’s Choices
-        </Typography>
+        <Stack direction={"row"} justifyContent={"space-between"}>
+          <Typography fontSize={"60px"} fontWeight={"700"}>
+            Mira’s Choices
+          </Typography>
+          <CountdownTimer />
+        </Stack>
         <Typography
           fontSize="40px"
           fontWeight={"700"}
@@ -131,12 +135,14 @@ const Home = () => {
               <img src={homeGraphic} alt="" style={{ width: "330px" }} />
             </Stack>
           </Stack>
-                  <Box>    <img
-            src={QR_CODE}
-            alt=""
-            style={{ borderRadius: "12px", maxWidth: "380px" }}
-          /></Box>
-      
+          <Box>
+            {" "}
+            <img
+              src={QR_CODE}
+              alt=""
+              style={{ borderRadius: "12px", maxWidth: "380px" }}
+            />
+          </Box>
         </Stack>
       </Stack>
       <Dialog

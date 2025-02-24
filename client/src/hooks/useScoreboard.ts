@@ -24,6 +24,7 @@ interface ArchetypePercentage {
 
 const useScoreboard = () => {
   const [totalPlayers, setTotalPlayers] = useState(0);
+  const [gameCompletion, setGameCompletion] = useState(0);
   const [leaderboard, setLeaderboard] = useState<LeaderboardItem[]>([]);
   const [archetypePercentages, setArchetypePercentages] = useState<ArchetypePercentage[]>([]);
   const previousLeaderboardRef=useRef<LeaderboardItem[]>([])
@@ -33,10 +34,13 @@ const useScoreboard = () => {
     try {
       const response = await userApi.get("/leaderboard");
       if (response.data.success) {
-        const { topUsers, archetypePercentages: percentages,totalPlayers,userRank } = response.data.data;
+        const { topUsers, archetypePercentages: percentages,totalPlayers,userRank,percentageGameCompletion } = response.data.data;
         if(totalPlayers){
           dispatch(setUser({totalPlayers,rank:userRank}))
           setTotalPlayers(totalPlayers)
+        }
+        if(percentageGameCompletion){
+          setGameCompletion(percentageGameCompletion)
         }
         setLeaderboard(topUsers);
         setArchetypePercentages(percentages);
@@ -48,7 +52,7 @@ const useScoreboard = () => {
     }
   };
 
-  return { leaderboard, handleFetchLeaderboard, archetypePercentages,totalPlayers,previousLeaderboardRef};
+  return { leaderboard,gameCompletion, handleFetchLeaderboard, archetypePercentages,totalPlayers,previousLeaderboardRef};
 };
 
 export default useScoreboard;

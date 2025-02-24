@@ -78,7 +78,8 @@ export default function CountdownTimer() {
         fontWeight: "800",
         padding: "12px",
         height: "65px",
-        "&:hover": { bgcolor: "#e4e4e4", boxShadow: "none" },
+        bgcolor:"#00000037",
+        "&:hover": { bgcolor: "#0000006e", boxShadow: "none" },
       }}
     >
       {formatTime(timeLeft)}

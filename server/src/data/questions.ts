@@ -52,7 +52,7 @@ export const questions: Question[] = [
       },
       {
         option: "B",
-        optionText: "Use ₹5,000 cash for fewer items.",
+        optionText: "₹5,000 cash use karo for kam items.",
         cash: 0,
         loan: {
           amount: 0,
@@ -88,7 +88,7 @@ export const questions: Question[] = [
       },
       {
         option: "B",
-        optionText: "No ads.",
+        optionText: "Koi ads nahi.",
         cash: 0,
         loan: {
           amount: 0,
@@ -124,7 +124,7 @@ export const questions: Question[] = [
       },
       {
         option: "B",
-        optionText: "Ignore",
+        optionText: "Ignore karo.",
         cash: 0,
         loan: {
           amount: 0,
@@ -160,7 +160,7 @@ export const questions: Question[] = [
       },
       {
         option: "B",
-        optionText: "Borrow ₹6,000 @10%.",
+        optionText: "₹6,000 @10% interest pe borrow karo.",
         cash: 0,
         loan: {
           amount: -6000,
@@ -196,7 +196,7 @@ export const questions: Question[] = [
       },
       {
         option: "B",
-        optionText: "Stay as is",
+        optionText: "Jaise hai waise hi rehne do.",
         cash: 500,
         loan: {
           amount: 0,
@@ -213,7 +213,7 @@ export const questions: Question[] = [
   },
   {
     id: 6,
-    question: "₹1,000 mutual funds mein invest karo @14%.",
+    question: "There are excess returns this year. Mira ko kya karna chahiye?",
     options: [
       {
         option: "A",
@@ -232,7 +232,7 @@ export const questions: Question[] = [
       },
       {
         option: "B",
-        optionText: "Withdraw money for personal use",
+        optionText: "Personal use ke liye paise nikaalo.",
         cash: -1000,
         loan: {
           amount: 0,
@@ -253,7 +253,7 @@ export const questions: Question[] = [
     options: [
       {
         option: "A",
-        optionText: "Lend ₹4,000 to a friend.",
+        optionText: "₹4,000 dost ko udhaar do.",
         cash: -4000,
         loan: {
           amount: 0,
@@ -268,7 +268,7 @@ export const questions: Question[] = [
       },
       {
         option: "B",
-        optionText: "Politely refuse",
+        optionText: "Pyaar se mana karo.",
         cash: 0,
         loan: {
           amount: 0,
@@ -289,7 +289,7 @@ export const questions: Question[] = [
     options: [
       {
         option: "A",
-        optionText: "Hire @₹2,000/month",
+        optionText: "₹2,000/month pe hire karo.",
         cash: -2000,
         loan: {
           amount: 0,
@@ -304,7 +304,7 @@ export const questions: Question[] = [
       },
       {
         option: "B",
-        optionText: "Work alone.",
+        optionText: "Akela manage karo.",
         cash: 0,
         loan: {
           amount: 0,
@@ -325,7 +325,7 @@ export const questions: Question[] = [
     options: [
       {
         option: "A",
-        optionText: "Invest ₹5,000 in a stock",
+        optionText: "₹5,000 stock mein invest karo.",
         cash: -5000,
         loan: {
           amount: 0,
@@ -340,7 +340,7 @@ export const questions: Question[] = [
       },
       {
         option: "B",
-        optionText: "Stick to bank deposit of 5%",
+        optionText: "5% bank deposit pe stick raho.",
         cash: -5000,
         loan: {
           amount: 0,
@@ -361,7 +361,7 @@ export const questions: Question[] = [
     options: [
       {
         option: "A",
-        optionText: "₹2,100 ka gift",
+        optionText: "2100 ka gift",
         cash: -2100,
         loan: {
           amount: 0,
@@ -376,7 +376,7 @@ export const questions: Question[] = [
       },
       {
         option: "B",
-        optionText: "Ghar pe dinner pe bulao",
+        optionText:"Ghar pe diner pe buloaa",
         cash: 0,
         loan: {
           amount: 0,
@@ -397,7 +397,7 @@ export const questions: Question[] = [
     options: [
       {
         option: "A",
-        optionText: "Discount, guaranteed big sale.",
+        optionText: "Discount do, with big sale",
         cash: 600,
         loan: {
           amount: 0,
@@ -412,7 +412,7 @@ export const questions: Question[] = [
       },
       {
         option: "B",
-        optionText: "Sell on Regular Price",
+        optionText: "Regular price pe becho.",
         cash: 400,
         loan: {
           amount: 0,
@@ -433,7 +433,7 @@ export const questions: Question[] = [
     options: [
       {
         option: "A",
-        optionText: "Buy insurance",
+        optionText: "₹2,000/year ki insurance bharo.",
         cash: -2000,
         loan: {
           amount: 0,
@@ -448,7 +448,7 @@ export const questions: Question[] = [
       },
       {
         option: "B",
-        optionText: "Run Ads",
+        optionText: "Ads chalao.",
         cash: 0,
         loan: {
           amount: 0,
@@ -469,7 +469,7 @@ export const questions: Question[] = [
     options: [
       {
         option: "A",
-        optionText: "Put ₹5,000 in FD @6%.",
+        optionText: "₹5,000 FD mein daalo @6%.",
         cash: -5000,
         loan: {
           amount: 0,
@@ -484,7 +484,7 @@ export const questions: Question[] = [
       },
       {
         option: "B",
-        optionText: "Invest in Mutual funds @14%",
+        optionText: "Mutual funds mein invest karo @14%.",
         cash: -5000,
         loan: {
           amount: 0,
@@ -521,7 +521,7 @@ export const questions: Question[] = [
       },
       {
         option: "B",
-        optionText: "Withdraw all investments",
+        optionText: "Sara amount withdraw kro",
         cash: 0,
         impact:Impacts.Withdraw_All_Investments,
         loan: {
@@ -543,7 +543,7 @@ export const questions: Question[] = [
     options: [
       {
         option: "A",
-        optionText: "Pay loan",
+        optionText: "Loan chukaao.",
         cash: 0,
         loan: {
           amount: 10000,
@@ -558,7 +558,7 @@ export const questions: Question[] = [
       },
       {
         option: "B",
-        optionText: "Pay 50% in loan and keep remaining for business",
+        optionText: "50% loan mein do aur baaki business ke liye rakho.",
         cash: 5000,
         loan: {
           amount: 5000,
@@ -579,7 +579,7 @@ export const questions: Question[] = [
     options: [
       {
         option: "A",
-        optionText: "Invest ₹5,000 in gold.",
+        optionText: "₹5,000 gold mein invest karo.",
         cash: -5000,
         loan: {
           amount: 0,
@@ -594,7 +594,7 @@ export const questions: Question[] = [
       },
       {
         option: "B",
-        optionText: "Stick to bank deposit",
+        optionText: "Bank deposit pe stick raho.",
         cash: -5000,
         loan: {
           amount: 0,
@@ -615,7 +615,7 @@ export const questions: Question[] = [
     options: [
       {
         option: "A",
-        optionText: "Pay on time.",
+        optionText: "Time pe payment karo.",
         cash: -5000,
         loan: {
           amount: 0,
@@ -630,7 +630,7 @@ export const questions: Question[] = [
       },
       {
         option: "B",
-        optionText: "Delay, with 5% penalty",
+        optionText: "Delay karo, 5% penalty ke saath.",
         cash: 0,
         impact:Impacts.Penalty_5,
         loan: {
@@ -652,7 +652,7 @@ export const questions: Question[] = [
     options: [
       {
         option: "A",
-        optionText: "Sell it",
+        optionText: "Bech do.",
         cash: 200000,
         loan: {
           amount: 0,
@@ -667,7 +667,7 @@ export const questions: Question[] = [
       },
       {
         option: "B",
-        optionText: "Keep business - take mentor help",
+        optionText: "Business rakho – mentor ki madad lo.",
         cash: 0,
         loan: {
           amount: 0,
