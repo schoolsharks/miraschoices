@@ -85,7 +85,7 @@ const Scoreboard = () => {
         direction={"row"}
         alignItems={"center"}
         width={"98%"}
-        padding={"12px 16px"}
+        padding={"12px 6px"}
         position={"relative"}
       > 
       <Stack direction={"row"} alignItems={"center"} gap={"8px"}>
