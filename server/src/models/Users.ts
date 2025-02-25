@@ -19,7 +19,7 @@ export interface IUser extends Document {
 const UserSchema: Schema = new Schema(
   {
     name: { type: String, required: true },
-    email: { type: String, required: true },
+    email: { type: String,default:"_"},
     session: { type: Schema.Types.ObjectId, ref: "Session" },
     answered: { type: Number, default: 0 },
     responses: [{ quesId: { type: Number }, option: { type: String } }],

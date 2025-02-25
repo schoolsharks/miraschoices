@@ -34,9 +34,9 @@ const Login = () => {
     if(formValues.name.trim()===""){
       setError("Screen name is required")
     }
-    else if(formValues.email.trim()===""){
-      setError("Email is required") 
-    }
+    // else if(formValues.email.trim()===""){
+    //   setError("Email is required") 
+    // }
     else{
       dispatch(createUser(formValues))
     }
@@ -91,7 +91,7 @@ const Login = () => {
           
         />
         <TextField
-          label="Email *"
+          label="Email"
           type="email"
           variant="standard"
           placeholder="eg. xoxo@gmail.com"
